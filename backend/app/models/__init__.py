@@ -2,6 +2,8 @@ from .base import Base
 from .user import User
 from .fhir import Patient, Condition, Observation
 from .agent import AgentMemory, AuditLog
+from .notification import Notification
+from .document import PatientDocument
 
 # Export all models for Alembic to detect
 __all__ = [
@@ -11,5 +13,7 @@ __all__ = [
     "Condition",
     "Observation",
     "AgentMemory",
-    "AuditLog"
+    "AuditLog",
+    "Notification",
+    "PatientDocument"
 ]

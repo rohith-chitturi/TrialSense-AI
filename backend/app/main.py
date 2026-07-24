@@ -16,6 +16,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(audit.router)
+app.include_router(documents.router)
+
+@app.get("/")
+async def root():
+    return {"message": "Welcome to TrialSense AI Backend"}
+
 @app.get("/health")
 async def health_check():
     return {"status": "ok", "service": "TrialSense AI Backend"}
